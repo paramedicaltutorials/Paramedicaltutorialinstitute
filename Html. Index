@@ -1,0 +1,1052 @@
+‎<!DOCTYPE html>
+‎<html lang="en">
+‎<head>
+‎  <meta charset="UTF-8" />
+‎  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+‎  <title>Radiology Hub – Jobs, MCQ, Courses</title>
+‎
+‎  <!-- Google Font & Icons -->
+‎  <link rel="preconnect" href="https://fonts.googleapis.com" />
+‎  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+‎  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+‎  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+‎
+‎  <style>
+‎    :root {
+‎      --bg: #050816;
+‎      --bg-alt: #070b1e;
+‎      --primary: #6366f1;
+‎      --primary-soft: rgba(99, 102, 241, 0.1);
+‎      --accent: #22c55e;
+‎      --text: #e5e7eb;
+‎      --muted: #9ca3af;
+‎      --card: #0b1023;
+‎      --border: #1f2937;
+‎      --danger: #f97373;
+‎    }
+‎
+‎    * {
+‎      box-sizing: border-box;
+‎      margin: 0;
+‎      padding: 0;
+‎    }
+‎
+‎    body {
+‎      font-family: "Poppins", sans-serif;
+‎      background: radial-gradient(circle at 0 0, #111827, #020617 45%, #000000 100%);
+‎      color: var(--text);
+‎      line-height: 1.6;
+‎      scroll-behavior: smooth;
+‎    }
+‎
+‎    a {
+‎      color: inherit;
+‎      text-decoration: none;
+‎    }
+‎
+‎    img {
+‎      max-width: 100%;
+‎      display: block;
+‎    }
+‎
+‎    /* Layout */
+‎    .container {
+‎      width: 90%;
+‎      max-width: 1200px;
+‎      margin: 0 auto;
+‎    }
+‎
+‎    /* Navbar */
+‎    header {
+‎      position: sticky;
+‎      top: 0;
+‎      z-index: 100;
+‎      backdrop-filter: blur(16px);
+‎      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.75), transparent);
+‎      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+‎    }
+‎
+‎    .nav {
+‎      display: flex;
+‎      align-items: center;
+‎      justify-content: space-between;
+‎      padding: 0.75rem 0;
+‎    }
+‎
+‎    .logo {
+‎      font-weight: 700;
+‎      letter-spacing: 0.05em;
+‎      font-size: 1.1rem;
+‎      display: flex;
+‎      align-items: center;
+‎      gap: 0.4rem;
+‎    }
+‎
+‎    .logo span {
+‎      color: var(--primary);
+‎    }
+‎
+‎    .nav-links {
+‎      display: flex;
+‎      gap: 1rem;
+‎      font-size: 0.85rem;
+‎    }
+‎
+‎    .nav-links a {
+‎      padding: 0.35rem 0.6rem;
+‎      border-radius: 999px;
+‎      border: 1px solid transparent;
+‎      transition: all 0.2s ease;
+‎      color: var(--muted);
+‎    }
+‎
+‎    .nav-links a:hover {
+‎      border-color: rgba(148, 163, 184, 0.5);
+‎      color: var(--text);
+‎      background: rgba(15, 23, 42, 0.8);
+‎    }
+‎
+‎    .nav-cta {
+‎      display: flex;
+‎      gap: 0.5rem;
+‎    }
+‎
+‎    .btn {
+‎      border-radius: 999px;
+‎      padding: 0.5rem 1rem;
+‎      font-size: 0.85rem;
+‎      border: none;
+‎      outline: none;
+‎      cursor: pointer;
+‎      display: inline-flex;
+‎      align-items: center;
+‎      gap: 0.35rem;
+‎      font-weight: 500;
+‎      transition: all 0.2s ease;
+‎      white-space: nowrap;
+‎    }
+‎
+‎    .btn-primary {
+‎      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+‎      color: white;
+‎      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+‎    }
+‎
+‎    .btn-primary:hover {
+‎      transform: translateY(-1px);
+‎      box-shadow: 0 15px 40px rgba(79, 70, 229, 0.6);
+‎    }
+‎
+‎    .btn-ghost {
+‎      background: transparent;
+‎      color: var(--text);
+‎      border: 1px solid rgba(148, 163, 184, 0.5);
+‎    }
+‎
+‎    .btn-ghost:hover {
+‎      background: rgba(15, 23, 42, 0.9);
+‎    }
+‎
+‎    /* Hero */
+‎    .hero {
+‎      padding: 4rem 0 3rem;
+‎    }
+‎
+‎    .hero-grid {
+‎      display: grid;
+‎      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+‎      gap: 3rem;
+‎      align-items: center;
+‎    }
+‎
+‎    .badge {
+‎      display: inline-flex;
+‎      align-items: center;
+‎      gap: 0.4rem;
+‎      padding: 0.25rem 0.7rem;
+‎      border-radius: 999px;
+‎      background: rgba(15, 23, 42, 0.9);
+‎      border: 1px solid rgba(148, 163, 184, 0.3);
+‎      font-size: 0.75rem;
+‎      color: var(--muted);
+‎      margin-bottom: 1rem;
+‎    }
+‎
+‎    .badge i {
+‎      color: var(--accent);
+‎    }
+‎
+‎    .hero h1 {
+‎      font-size: clamp(2rem, 4vw, 2.9rem);
+‎      line-height: 1.15;
+‎      margin-bottom: 1rem;
+‎    }
+‎
+‎    .hero h1 span {
+‎      background: linear-gradient(120deg, #22c55e, #38bdf8, #6366f1);
+‎      -webkit-background-clip: text;
+‎      -webkit-text-fill-color: transparent;
+‎    }
+‎
+‎    .hero p {
+‎      color: var(--muted);
+‎      font-size: 0.95rem;
+‎      max-width: 520px;
+‎      margin-bottom: 1.5rem;
+‎    }
+‎
+‎    .hero-actions {
+‎      display: flex;
+‎      flex-wrap: wrap;
+‎      gap: 0.75rem;
+‎      margin-bottom: 1rem;
+‎    }
+‎
+‎    .hero-meta {
+‎      display: flex;
+‎      flex-wrap: wrap;
+‎      gap: 1.5rem;
+‎      font-size: 0.8rem;
+‎      color: var(--muted);
+‎    }
+‎
+‎    .hero-meta span {
+‎      display: flex;
+‎      align-items: center;
+‎      gap: 0.3rem;
+‎    }
+‎
+‎    .hero-card {
+‎      background: radial-gradient(circle at top, #1d2439, #020617);
+‎      padding: 1.5rem;
+‎      border-radius: 1.5rem;
+‎      border: 1px solid rgba(148, 163, 184, 0.25);
+‎      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+‎      position: relative;
+‎      overflow: hidden;
+‎    }
+‎
+‎    .glow {
+‎      position: absolute;
+‎      inset: -40%;
+‎      background: radial-gradient(circle at 10% 0, rgba(94, 234, 212, 0.08), transparent 55%),
+‎                  radial-gradient(circle at 90% 100%, rgba(129, 140, 248, 0.18), transparent 55%);
+‎      opacity: 0.9;
+‎      pointer-events: none;
+‎    }
+‎
+‎    .hero-card-inner {
+‎      position: relative;
+‎      z-index: 1;
+‎    }
+‎
+‎    .hero-card header {
+‎      position: static;
+‎      backdrop-filter: none;
+‎      background: transparent;
+‎      border: none;
+‎      padding: 0;
+‎      margin-bottom: 0.75rem;
+‎    }
+‎
+‎    .pill-row {
+‎      display: flex;
+‎      flex-wrap: wrap;
+‎      gap: 0.4rem;
+‎      margin-bottom: 0.9rem;
+‎    }
+‎
+‎    .pill {
+‎      font-size: 0.7rem;
+‎      padding: 0.25rem 0.5rem;
+‎      border-radius: 999px;
+‎      background: rgba(15, 23, 42, 0.9);
+‎      border: 1px solid rgba(148, 163, 184, 0.4);
+‎      color: var(--muted);
+‎    }
+‎
+‎    .stat-row {
+‎      display: grid;
+‎      grid-template-columns: repeat(3, minmax(0, 1fr));
+‎      gap: 0.6rem;
+‎      margin-bottom: 1rem;
+‎      font-size: 0.75rem;
+‎    }
+‎
+‎    .stat-box {
+‎      background: rgba(15, 23, 42, 0.9);
+‎      border-radius: 0.9rem;
+‎      padding: 0.45rem 0.55rem;
+‎      border: 1px solid rgba(148, 163, 184, 0.35);
+‎    }
+‎
+‎    .stat-box strong {
+‎      display: block;
+‎      font-size: 0.8rem;
+‎    }
+‎
+‎    .ai-preview {
+‎      background: rgba(15, 23, 42, 0.95);
+‎      border-radius: 0.9rem;
+‎      padding: 0.75rem;
+‎      border: 1px dashed rgba(129, 140, 248, 0.6);
+‎      font-size: 0.75rem;
+‎    }
+‎
+‎    .ai-preview-header {
+‎      display: flex;
+‎      align-items: center;
+‎      justify-content: space-between;
+‎      margin-bottom: 0.35rem;
+‎    }
+‎
+‎    .ai-dots span {
+‎      width: 5px;
+‎      height: 5px;
+‎      border-radius: 999px;
+‎      background: rgba(148, 163, 184, 0.7);
+‎      display: inline-block;
+‎      margin-right: 2px;
+‎    }
+‎
+‎    /* Sections */
+‎    section {
+‎      padding: 3rem 0;
+‎      border-top: 1px solid rgba(31, 41, 55, 0.9);
+‎    }
+‎
+‎    .section-header {
+‎      display: flex;
+‎      justify-content: space-between;
+‎      align-items: flex-end;
+‎      gap: 1rem;
+‎      margin-bottom: 1.5rem;
+‎    }
+‎
+‎    .section-title {
+‎      font-size: 1.2rem;
+‎      font-weight: 600;
+‎    }
+‎
+‎    .section-sub {
+‎      font-size: 0.85rem;
+‎      color: var(--muted);
+‎    }
+‎
+‎    .tag {
+‎      font-size: 0.7rem;
+‎      padding: 0.2rem 0.5rem;
+‎      border-radius: 999px;
+‎      background: rgba(15, 23, 42, 0.95);
+‎      border: 1px solid rgba(148, 163, 184, 0.35);
+‎      color: var(--muted);
+‎    }
+‎
+‎    /* Cards grid */
+‎    .grid {
+‎      display: grid;
+‎      gap: 1rem;
+‎    }
+‎
+‎    .grid-3 {
+‎      grid-template-columns: repeat(3, minmax(0, 1fr));
+‎    }
+‎
+‎    .grid-2 {
+‎      grid-template-columns: repeat(2, minmax(0, 1fr));
+‎    }
+‎
+‎    .card {
+‎      background: var(--card);
+‎      border-radius: 1rem;
+‎      padding: 1rem;
+‎      border: 1px solid var(--border);
+‎      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6);
+‎      font-size: 0.85rem;
+‎    }
+‎
+‎    .card h3 {
+‎      font-size: 0.98rem;
+‎      margin-bottom: 0.4rem;
+‎    }
+‎
+‎    .chip-row {
+‎      display: flex;
+‎      flex-wrap: wrap;
+‎      gap: 0.3rem;
+‎      margin-top: 0.4rem;
+‎    }
+‎
+‎    .chip {
+‎      font-size: 0.7rem;
+‎      padding: 0.12rem 0.5rem;
+‎      border-radius: 999px;
+‎      background: rgba(15, 23, 42, 0.9);
+‎      border: 1px solid rgba(148, 163, 184, 0.4);
+‎      color: var(--muted);
+‎    }
+‎
+‎    .card-meta {
+‎      font-size: 0.75rem;
+‎      color: var(--muted);
+‎      margin-top: 0.4rem;
+‎    }
+‎
+‎    /* Job section */
+‎    .job-badges {
+‎      display: flex;
+‎      flex-wrap: wrap;
+‎      gap: 0.4rem;
+‎      font-size: 0.75rem;
+‎      margin-bottom: 0.7rem;
+‎    }
+‎
+‎    .job-badge {
+‎      padding: 0.16rem 0.55rem;
+‎      border-radius: 999px;
+‎      border: 1px solid rgba(74, 222, 128, 0.5);
+‎      color: #bbf7d0;
+‎      background: rgba(22, 101, 52, 0.2);
+‎    }
+‎
+‎    /* MCQ & tests */
+‎    .mcq-list li {
+‎      margin-bottom: 0.35rem;
+‎      font-size: 0.8rem;
+‎    }
+‎
+‎    .badge-outline {
+‎      font-size: 0.7rem;
+‎      padding: 0.1rem 0.4rem;
+‎      border-radius: 999px;
+‎      border: 1px dashed rgba(129, 140, 248, 0.7);
+‎      color: #c7d2fe;
+‎    }
+‎
+‎    /* Courses */
+‎    .course-card header {
+‎      display: flex;
+‎      justify-content: space-between;
+‎      align-items: center;
+‎      margin-bottom: 0.4rem;
+‎    }
+‎
+‎    .price {
+‎      font-size: 0.8rem;
+‎      color: #bbf7d0;
+‎    }
+‎
+‎    /* YouTube */
+‎    .video-grid {
+‎      display: grid;
+‎      gap: 1rem;
+‎      grid-template-columns: repeat(3, minmax(0, 1fr));
+‎    }
+‎
+‎    .video-card {
+‎      background: var(--card);
+‎      border-radius: 0.9rem;
+‎      padding: 0.7rem;
+‎      border: 1px solid var(--border);
+‎      font-size: 0.8rem;
+‎    }
+‎
+‎    .video-thumb {
+‎      aspect-ratio: 16 / 9;
+‎      border-radius: 0.6rem;
+‎      overflow: hidden;
+‎      background: linear-gradient(135deg, #1d4ed8, #a855f7);
+‎      display: flex;
+‎      align-items: center;
+‎      justify-content: center;
+‎      color: white;
+‎      font-size: 1.4rem;
+‎      margin-bottom: 0.5rem;
+‎    }
+‎
+‎    /* AI Ask a Question */
+‎    .ask-ai-layout {
+‎      display: grid;
+‎      gap: 1rem;
+‎      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+‎    }
+‎
+‎    .chat-box {
+‎      background: var(--card);
+‎      border-radius: 1rem;
+‎      padding: 1rem;
+‎      border: 1px solid rgba(129, 140, 248, 0.6);
+‎      font-size: 0.8rem;
+‎      max-height: 330px;
+‎      display: flex;
+‎      flex-direction: column;
+‎    }
+‎
+‎    .chat-header {
+‎      display: flex;
+‎      justify-content: space-between;
+‎      align-items: center;
+‎      margin-bottom: 0.5rem;
+‎    }
+‎
+‎    .chat-messages {
+‎      flex: 1;
+‎      overflow-y: auto;
+‎      padding-right: 0.3rem;
+‎      margin-bottom: 0.6rem;
+‎    }
+‎
+‎    .msg {
+‎      margin-bottom: 0.4rem;
+‎      padding: 0.4rem 0.55rem;
+‎      border-radius: 0.6rem;
+‎      max-width: 90%;
+‎    }
+‎
+‎    .msg-user {
+‎      margin-left: auto;
+‎      background: rgba(37, 99, 235, 0.25);
+‎    }
+‎
+‎    .msg-ai {
+‎      background: rgba(15, 23, 42, 0.9);
+‎      border: 1px solid rgba(148, 163, 184, 0.4);
+‎    }
+‎
+‎    .chat-input-row {
+‎      display: flex;
+‎      gap: 0.4rem;
+‎      align-items: center;
+‎    }
+‎
+‎    .chat-input-row input {
+‎      flex: 1;
+‎      padding: 0.45rem 0.6rem;
+‎      border-radius: 999px;
+‎      border: 1px solid rgba(55, 65, 81, 0.9);
+‎      background: #020617;
+‎      color: var(--text);
+‎      font-size: 0.8rem;
+‎      outline: none;
+‎    }
+‎
+‎    .chat-input-row input::placeholder {
+‎      color: #6b7280;
+‎    }
+‎
+‎    .btn-icon {
+‎      width: 34px;
+‎      height: 34px;
+‎      border-radius: 999px;
+‎      border: none;
+‎      display: inline-flex;
+‎      align-items: center;
+‎      justify-content: center;
+‎      background: linear-gradient(135deg, #22c55e, #16a34a);
+‎      color: white;
+‎      cursor: pointer;
+‎      font-size: 0.85rem;
+‎    }
+‎
+‎    .hint-box {
+‎      font-size: 0.78rem;
+‎      color: var(--muted);
+‎      background: rgba(15, 23, 42, 0.9);
+‎      padding: 0.7rem;
+‎      border-radius: 0.8rem;
+‎      border: 1px dashed rgba(148, 163, 184, 0.5);
+‎    }
+‎
+‎    /* Forms */
+‎    .form-grid {
+‎      display: grid;
+‎      gap: 0.75rem;
+‎    }
+‎
+‎    .form-row {
+‎      display: grid;
+‎      gap: 0.75rem;
+‎      grid-template-columns: repeat(2, minmax(0, 1fr));
+‎    }
+‎
+‎    label {
+‎      font-size: 0.78rem;
+‎      color: var(--muted);
+‎    }
+‎
+‎    input[type="text"],
+‎    input[type="email"],
+‎    textarea,
+‎    select {
+‎      width: 100%;
+‎      margin-top: 0.25rem;
+‎      padding: 0.45rem 0.6rem;
+‎      border-radius: 0.6rem;
+‎      border: 1px solid rgba(55, 65, 81, 0.9);
+‎      background: #020617;
+‎      color: var(--text);
+‎      font-size: 0.8rem;
+‎      outline: none;
+‎    }
+‎
+‎    textarea {
+‎      resize: vertical;
+‎      min-height: 90px;
+‎    }
+‎
+‎    /* Footer */
+‎    footer {
+‎      border-top: 1px solid rgba(31, 41, 55, 0.9);
+‎      padding: 1.5rem 0 2rem;
+‎      font-size: 0.78rem;
+‎      color: var(--muted);
+‎    }
+‎
+‎    footer .footer-row {
+‎      display: flex;
+‎      justify-content: space-between;
+‎      flex-wrap: wrap;
+‎      gap: 1rem;
+‎      align-items: center;
+‎    }
+‎
+‎    /* Responsive */
+‎    @media (max-width: 960px) {
+‎      .hero-grid {
+‎        grid-template-columns: 1fr;
+‎      }
+‎      .video-grid,
+‎      .grid-3 {
+‎        grid-template-columns: repeat(2, minmax(0, 1fr));
+‎      }
+‎      .ask-ai-layout {
+‎        grid-template-columns: 1fr;
+‎      }
+‎      .nav-cta {
+‎        display: none;
+‎      }
+‎    }
+‎
+‎    @media (max-width: 720px) {
+‎      .nav-links {
+‎        display: none;
+‎      }
+‎      section {
+‎        padding: 2.3rem 0;
+‎      }
+‎      .grid-3,
+‎      .video-grid,
+‎      .grid-2 {
+‎        grid-template-columns: 1fr;
+‎      }
+‎      .hero {
+‎        padding-top: 3rem;
+‎      }
+‎    }
+‎  </style>
+‎</head>
+‎<body>
+‎  <!-- Navbar -->
+‎  <header>
+‎    <div class="container nav">
+‎      <div class="logo">
+‎        <i class="fa-solid fa-x-ray"></i> Rad<span>Prep</span> Hub
+‎      </div>
+‎      <nav class="nav-links">
+‎        <a href="#jobs">Jobs</a>
+‎        <a href="#prep">Preparation</a>
+‎        <a href="#mcq">MCQ</a>
+‎        <a href="#courses">Courses</a>
+‎        <a href="#youtube">Videos</a>
+‎        <a href="#ask-ai">Ask AI</a>
+‎        <a href="#contact">Contact</a>
+‎      </nav>
+‎      <div class="nav-cta">
+‎        <button class="btn btn-ghost" onclick="scrollToId('join')">
+‎          Join course
+‎        </button>
+‎        <button class="btn btn-primary" onclick="scrollToId('test-series')">
+‎          Start test series
+‎        </button>
+‎      </div>
+‎    </div>
+‎  </header>
+‎
+‎  <!-- Hero -->
+‎  <section class="hero">
+‎    <div class="container hero-grid">
+‎      <div>
+‎        <div class="badge">
+‎          <i class="fa-solid fa-sparkles"></i>
+‎          Radiology technologist AI study platform
+‎        </div>
+‎        <h1>
+‎          One **smart** hub for<br />
+‎          <span>Radiology jobs & exam prep</span>
+‎        </h1>
+‎        <p>
+‎          Track latest government and private radiology vacancies, practice exam‑style MCQs, attempt full test series with explanations, and learn from structured courses, notes, and videos – all in one place.
+‎        </p>
+‎        <div class="hero-actions">
+‎          <button class="btn btn-primary" onclick="scrollToId('jobs')">
+‎            <i class="fa-solid fa-briefcase"></i> View job updates
+‎          </button>
+‎          <button class="btn btn-ghost" onclick="scrollToId('mcq')">
+‎            <i class="fa-solid fa-clipboard-question"></i> Practice MCQ
+‎          </button>
+‎        </div>
+‎        <div class="hero-meta">
+‎          <span><i class="fa-regular fa-circle-check"></i> Govt + private jobs</span>
+‎          <span><i class="fa-solid fa-brain"></i> AI‑style doubt support (front‑end)</span>
+‎          <span><i class="fa-solid fa-bolt"></i> Designed for radiology techs</span>
+‎        </div>
+‎      </div>
+‎
+‎      <div class="hero-card">
+‎        <div class="glow"></div>
+‎        <div class="hero-card-inner">
+‎          <div class="pill-row">
+‎            <span class="pill">Job alerts</span>
+‎            <span class="pill">MCQ practice</span>
+‎            <span class="pill">Test series</span>
+‎            <span class="pill">Radiology notes</span>
+‎          </div>
+‎
+‎          <div class="stat-row">
+‎            <div class="stat-box">
+‎              <strong>Govt jobs</strong>
+‎              <span>AIIMS, ESIC, RRB, State</span>
+‎            </div>
+‎            <div class="stat-box">
+‎              <strong>Question bank</strong>
+‎              <span>MCQ + PYQ + mocks</span>
+‎            </div>
+‎            <div class="stat-box">
+‎              <strong>Smart planner</strong>
+‎              <span>Topic‑wise progress</span>
+‎            </div>
+‎          </div>
+‎
+‎          <div class="ai-preview">
+‎            <div class="ai-preview-header">
+‎              <span style="font-size: 0.8rem;">
+‎                <i class="fa-solid fa-robot" style="color:#a5b4fc;"></i>
+‎                RadPrep Assist
+‎              </span>
+‎              <div class="ai-dots">
+‎                <span></span><span></span><span></span>
+‎              </div>
+‎            </div>
+‎            <p>
+‎              “Ask any radiology or exam doubt in simple language. The AI assistant can guide you to important topics, recommend practice sets, and suggest books based on your target exam.”
+‎            </p>
+‎          </div>
+‎        </div>
+‎      </div>
+‎    </div>
+‎  </section>
+‎
+‎  <!-- Jobs -->
+‎  <section id="jobs">
+‎    <div class="container">
+‎      <div class="section-header">
+‎        <div>
+‎          <div class="section-title">Job updates – Government & Private</div>
+‎          <p class="section-sub">
+‎            Track active radiology technologist vacancies, last dates, and quick eligibility highlights.
+‎          </p>
+‎        </div>
+‎        <span class="tag"><i class="fa-solid fa-bell"></i> Live job board (manually update)</span>
+‎      </div>
+‎
+‎      <div class="grid grid-3">
+‎        <div class="card">
+‎          <h3>AIIMS / Central Govt</h3>
+‎          <div class="job-badges">
+‎            <span class="job-badge">Govt</span>
+‎            <span class="job-badge">Diploma / BSc</span>
+‎          </div>
+‎          <p>
+‎            Add AIIMS, ESIC, RRB, DSSSB, state health department, and other central government radiology posts with notification links, last date, and basic qualification.
+‎          </p>
+‎          <p class="card-meta">
+‎            Example fields: Notification date, Post name, Seats, Last date, Apply link.
+‎          </p>
+‎        </div>
+‎
+‎        <div class="card">
+‎          <h3>State Govt & PSU</h3>
+‎          <div class="job-badges">
+‎            <span class="job-badge">State</span>
+‎            <span class="job-badge">Contract / Permanent</span>
+‎          </div>
+‎          <p>
+‎            List state health society, NHM, Medical College, PSU hospital, and other state‑level posts with location and salary highlights.
+‎          </p>
+‎          <p class="card-meta">
+‎            You can maintain these in Google Sheet and update manually on this page.
+‎          </p>
+‎        </div>
+‎
+‎        <div class="card">
+‎          <h3>Private Hospital & Diagnostics</h3>
+‎          <div class="job-badges">
+‎            <span class="job-badge">Private</span>
+‎            <span class="job-badge">Fresher friendly</span>
+‎          </div>
+‎          <p>
+‎            Showcase vacancies from corporate hospitals, diagnostic centers, teleradiology, and imaging chains with HR email / WhatsApp contact.
+‎          </p>
+‎          <p class="card-meta">
+‎            Add “Apply now” buttons with mailto / WhatsApp links.
+‎          </p>
+‎        </div>
+‎      </div>
+‎    </div>
+‎  </section>
+‎
+‎  <!-- Preparation & Important topics -->
+‎  <section id="prep">
+‎    <div class="container">
+‎      <div class="section-header">
+‎        <div>
+‎          <div class="section-title">Radiology technologist preparation</div>
+‎          <p class="section-sub">
+‎            Organised syllabus, important topics, and structured study plans for different exams.
+‎          </p>
+‎        </div>
+‎        <span class="tag"><i class="fa-solid fa-list-check"></i> Syllabus + plans</span>
+‎      </div>
+‎
+‎      <div class="grid grid-3">
+‎        <div class="card">
+‎          <h3>Syllabus by exam</h3>
+‎          <p>
+‎            Create separate tabs or lists for AIIMS, State staff selection, RRB, ESIC, and private hospital entrance with detailed topic‑wise syllabus.
+‎          </p>
+‎          <ul class="mcq-list">
+‎            <li>Radiographic physics & equipment</li>
+‎            <li>Radiation protection & QA</li>
+‎            <li>CT, MRI, USG basics</li>
+‎            <li>Contrast studies & positioning</li>
+‎          </ul>
+‎        </div>
+‎
+‎        <div class="card">
+‎          <h3>Important topics & weightage</h3>
+‎          <p>
+‎            Highlight high‑yield chapters, commonly repeated topics, and image‑based areas using colour tags and star icons.
+‎          </p>
+‎          <div class="chip-row">
+‎            <span class="chip">Bucky & grids</span>
+‎            <span class="chip">Image quality & artifacts</span>
+‎            <span class="chip">Dose & protection</span>
+‎            <span class="chip">Contrast media</span>
+‎          </div>
+‎        </div>
+‎
+‎        <div class="card">
+‎          <h3>Study planner</h3>
+‎          <p>
+‎            Add a simple weekly plan template (e.g. 12‑week crash course) and link it with your courses and test series for systematic preparation.
+‎          </p>
+‎          <p class="card-meta">
+‎            You can later connect this area to a login/dashboard.
+‎          </p>
+‎        </div>
+‎      </div>
+‎    </div>
+‎  </section>
+‎
+‎  <!-- MCQ, Practice sets, PYQ, Test series -->
+‎  <section id="mcq">
+‎    <div class="container">
+‎      <div class="section-header">
+‎        <div>
+‎          <div class="section-title">MCQ, practice sets & previous year questions</div>
+‎          <p class="section-sub">
+‎            Build topic‑wise question banks with full answer explanations and timed tests.
+‎          </p>
+‎        </div>
+‎        <span class="tag"><i class="fa-solid fa-stopwatch"></i> Test interface (front‑end)</span>
+‎      </div>
+‎
+‎      <div class="grid grid-2">
+‎        <div class="card">
+‎          <h3>Topic‑wise MCQ & PYQ</h3>
+‎          <ul class="mcq-list">
+‎            <li>Radiation physics – 50 MCQ</li>
+‎            <li>Radiographic technique & positioning – 80 MCQ</li>
+‎            <li>Special investigations & contrast – 40 MCQ</li>
+‎            <li>CT, MRI, USG basics – 60 MCQ</li>
+‎          </ul>
+‎          <p class="card-meta">
+‎            Present MCQs in sets with “Show answer” and “Explanation” toggles. Import questions from your notes or PDFs.
+‎          </p>
+‎        </div>
+‎
+‎        <div class="card" id="test-series">
+‎          <h3>Online test series (demo)</h3>
+‎          <p>
+‎            Below is a simple front‑end mock test widget. You can add real questions later and connect it to a backend or Google Sheets.
+‎          </p>
+‎          <div style="margin-top:0.7rem; font-size:0.8rem;">
+‎            <div style="margin-bottom:0.4rem;">
+‎              <span class="badge-outline">Demo question</span>
+‎            </div>
+‎            <div id="demo-question">
+‎              Q.1 A Bucky grid is primarily used to:<br />
+‎              <label><input type="radio" name="q1" value="a" /> Increase patient dose</label><br />
+‎              <label><input type="radio" name="q1" value="b" /> Reduce scatter radiation</label><br />
+‎              <label><input type="radio" name="q1" value="c" /> Decrease exposure time</label><br />
+‎              <label><input type="radio" name="q1" value="d" /> Improve tube life</label>
+‎            </div>
+‎            <button class="btn btn-primary" style="margin-top:0.5rem;" onclick="checkDemoAnswer()">
+‎              Submit & view explanation
+‎            </button>
+‎            <div id="demo-explanation" style="margin-top:0.5rem; font-size:0.78rem; color:var(--muted); display:none;">
+‎              Correct option: <strong>B</strong> – The primary purpose of a Bucky grid is to <em>reduce scattered radiation</em>, which improves image contrast and overall diagnostic quality.
+‎            </div>
+‎          </div>
+‎        </div>
+‎      </div>
+‎    </div>
+‎  </section>
+‎
+‎  <!-- Courses & Radiology updates -->
+‎  <section id="courses">
+‎    <div class="container">
+‎      <div class="section-header">
+‎        <div>
+‎          <div class="section-title">Courses & radiology updates</div>
+‎          <p class="section-sub">
+‎            Structured courses plus regular updates from the radiology world to keep your knowledge current.
+‎          </p>
+‎        </div>
+‎        <span class="tag"><i class="fa-solid fa-graduation-cap"></i> Learning paths</span>
+‎      </div>
+‎
+‎      <div class="grid grid-3">
+‎        <div class="card course-card">
+‎          <header>
+‎            <h3>Foundation course – Radiology Tech</h3>
+‎            <span class="price">Free / Paid</span>
+‎          </header>
+‎          <p>
+‎            8–12 week course covering basics of radiographic physics, darkroom/digital imaging, positioning, and safety – ideal for beginners and revision.
+‎          </p>
+‎          <div class="chip-row">
+‎            <span class="chip">Video + PDF</span>
+‎            <span class="chip">Assignments</span>
+‎            <span class="chip">Weekly tests</span>
+‎          </div>
+‎          <button class="btn btn-primary" style="margin-top:0.6rem;" onclick="scrollToId('join')">
+‎            Join foundation batch
+‎          </button>
+‎        </div>
+‎
+‎        <div class="card course-card">
+‎          <header>
+‎            <h3>Exam‑focused crash batches</h3>
+‎            <span class="price">Target specific exams</span>
+‎          </header>
+‎          <p>
+‎            Short, high‑yield courses before important exams (AIIMS, ESIC, state). Focused MCQ discussion, PYQ analysis, and rapid revision notes.
+‎          </p>
+‎          <div class="chip-row">
+‎            <span class="chip">PYQ analysis</span>
+‎            <span class="chip">Rank booster</span>
+‎          </div>
+‎        </div>
+‎
+‎        <div class="card">
+‎          <h3>Radiology news & updates</h3>
+‎          <p>
+‎            Add a mini‑blog space where you can post updates about new imaging technology, guidelines, and exam notifications every week.
+‎          </p>
+‎          <p class="card-meta">
+‎            Later, you can connect this with a CMS like WordPress or a headless CMS.
+‎          </p>
+‎        </div>
+‎      </div>
+‎    </div>
+‎  </section>
+‎
+‎  <!-- Best books -->
+‎  <section id="books">
+‎    <div class="container">
+‎      <div class="section-header">
+‎        <div>
+‎          <div class="section-title">Best books for radiology tech preparation</div>
+‎          <p class="section-sub">
+‎            Curated list of standard and exam‑oriented books with your personal recommendations.
+‎          </p>
+‎        </div>
+‎        <span class="tag"><i class="fa-solid fa-book-open"></i> Book shelf</span>
+‎      </div>
+‎
+‎      <div class="grid grid-3">
+‎        <div class="card">
+‎          <h3>Core textbooks</h3>
+‎          <p>
+‎            List 2–3 standard radiology and radiographic textbooks with brief notes on how to use each for concepts and images.
+‎          </p>
+‎          <ul class="mcq-list">
+‎            <li>Textbook of Radiographic Positioning</li>
+‎            <li>Radiation physics & protection</li>
+‎          </ul>
+‎        </div>
+‎
+‎        <div class="card">
+‎          <h3>MCQ & exam guides</h3>
+‎          <p>
+‎            Include dedicated MCQ books / exam compilations with page‑wise or chapter‑wise question distribution that matches your course structure.
+‎          </p>
+‎          <p class="card-meta">
+‎            Add Amazon / Flipkart links or PDF purchase links if you sell your own notes.
+‎          </p>
+‎        </div>
+‎
+‎        <div class="card">
+‎          <h3>Quick notes & high‑yield PDFs</h3>
+‎          <p>
+‎            Offer your own short notes, mind‑maps, and last‑day revision PDFs as downloadable or locked course material.
+‎          </p>
+‎        </div>
+‎      </div>
+‎    </div>
+‎  </section>
+‎
+‎  <!-- YouTube videos -->
+‎  <section id="youtube">
+‎    <div class="container">
+‎      <div class="section-header">
+‎        <div>
+‎          <div class="section-title">YouTube channel – Radiology classes</div>
+‎          <p class="section-sub">
+‎            Embed your latest videos and playlists directly so students can watch without leaving the site.
+‎          </p>
+‎        </div>
+‎        <span class="tag"><i class="fa-brands fa-youtube"></i> Add your channel</span>
+‎      </div
+‎
+‎      <div class="video-grid">
+‎        <!-- Replace # with your YouTube video links -->
+‎        <a class="video-card" href="#" target="_blank">
+‎          <div class="video-thumb">
+‎            <i class="fa-brands fa-youtube"></i>
+‎          </div>
+‎          <div><strong>Intro to Radiography Course</strong></div>
+‎          <div class="card-meta">YouTube • Click to watch</div>
+‎        </a>
+‎
+‎        <a class="video-card" href="#" target="_blank">
+‎          <div class="video-thumb">
+‎            <i class="fa-brands fa-youtube"></i>
+‎          </div>
+‎          <div><strong>Top 50 MCQs – Image quality</strong></div>
+‎          <div class="card-meta">YouTube • MCQ discussion</div>
+‎        </a>
+‎
+‎        <a class="video-card" href="#" target="_blank">
+‎          <div class="vide
